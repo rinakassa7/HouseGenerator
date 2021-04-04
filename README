@@ -1,0 +1,191 @@
+MEMBRES DU GROUPE:
+
+		1-KASSA Rina 21911373 groupe 2A
+		2-OUNESLI Mélissa 21911312 groupe 2A
+		3-LOPEZ Pardo Hugues 21803489 groupe 2A
+		4-AIT HAMMOUDA Faina 21812339 groupe 2A
+
+Algorithmes supplémentaires réalisés :
+
+1- méthode contient et identique dans la classe DFSPlanner qui vérifie si l'état suivant est dans la liste des fermées pour éviter de passer plusieurs fois par le même état sans s'en rendre compte.
+
+2- la méthode subSet dans la classe BruteForceAssociationRuleMiner qui crée et retourne les partitions d'un ensemble 
+
+
+Résultat de notre HouseDemo pour un plan de 2*2 :
+
+//_____________________________________________________Exemple de maison___________________________________________________________________//
+
+Liste des Variables...
+
+dalle coulée
+dalle humide
+toiture terminée
+murs élevés
+Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]
+Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]
+Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]
+Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]
+
+Liste des Contraintes...
+
+piece(1,1) !=  piece(2,1)
+piece(1,1) !=  piece(1,2)
+piece(2,1) !=  piece(1,1)
+piece(2,1) !=  piece(1,2)
+piece(1,2) !=  piece(2,2)
+piece(2,2) !=  piece(1,1)
+piece(1,1) !=  piece(2,2)
+piece(2,1) !=  piece(2,2)
+piece(2,2) !=  piece(1,2)
+piece(2,2) !=  piece(2,1)
+piece(1,2) !=  piece(1,1)
+piece(1,2) !=  piece(2,1)
+Rule [l1=toiture terminée, test1=true, l2=murs élevés, test2=true]
+Rule [l1=dalle humide, test1=false, l2=dalle coulée, test2=true]
+Rule [l1=murs élevés, test1=true, l2=dalle humide, test2=false]
+
+Liste des Actions...
+
+Couller Dalle[precondition={}, effet={dalle coulée=true, dalle humide=true}, cout=2]
+Attendre[precondition={dalle coulée=true, dalle humide=true}, effet={dalle humide=false}, cout=5]
+Mur Elevee[precondition={dalle coulée=true, dalle humide=false}, effet={murs élevés=true}, cout=7]
+Toiture Terminee[precondition={dalle coulée=true, murs élevés=true}, effet={toiture terminée=true}, cout=8]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=cuisine}, cout=10]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=séjour}, cout=10]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=WC}, cout=10]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=salle de bains}, cout=10]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre1}, cout=10]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre2}, cout=10]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=cuisine}, cout=10]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=séjour}, cout=10]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=WC}, cout=10]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=salle de bains}, cout=10]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre1}, cout=10]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre2}, cout=10]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=cuisine}, cout=10]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=séjour}, cout=10]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=WC}, cout=10]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=salle de bains}, cout=10]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre1}, cout=10]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre2}, cout=10]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=cuisine}, cout=10]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=séjour}, cout=10]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=WC}, cout=10]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=salle de bains}, cout=10]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre1}, cout=10]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre2}, cout=10]
+
+//_____________________________________________________________Solveurs____________________________________________________________________//
+
+Algorithme de BacktrackSolver...
+
+dalle coulée => false
+dalle humide => true
+toiture terminée => false
+murs élevés => false
+piece(1,2) => cuisine
+piece(1,1) => séjour
+piece(2,1) => WC
+piece(2,2) => salle de bains
+
+ALgorithme de MacSolver...
+
+dalle coulée => false
+dalle humide => true
+toiture terminée => false
+murs élevés => false
+piece(1,2) => cuisine
+piece(1,1) => séjour
+piece(2,1) => WC
+piece(2,2) => salle de bains
+
+ALgorithme de HeuristicMacSolver...
+
+dalle coulée => true
+dalle humide => true
+toiture terminée => false
+murs élevés => false
+piece(1,2) => chambre1
+piece(1,1) => séjour
+piece(2,1) => WC
+piece(2,2) => chambre2
+
+//__________________________________________________________________Planification_______________________________________________________________________________//
+
+EtatInitial...
+
+{dalle coulée=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}
+Goal... 
+Goal [etat={dalle coulée=true, dalle humide=false, toiture terminée=true, murs élevés=true, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre2, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=WC, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=salle de bains, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre1}]
+
+
+Plan avec BFS...
+
+Couller Dalle[precondition={}, effet={dalle coulée=true, dalle humide=true}, cout=2]
+Attendre[precondition={dalle coulée=true, dalle humide=true}, effet={dalle humide=false}, cout=5]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=salle de bains}, cout=10]
+Mur Elevee[precondition={dalle coulée=true, dalle humide=false}, effet={murs élevés=true}, cout=7]
+Toiture Terminee[precondition={dalle coulée=true, murs élevés=true}, effet={toiture terminée=true}, cout=8]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre2}, cout=10]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=WC}, cout=10]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre1}, cout=10]
+
+Plan avec DFS...
+
+Attendre[precondition={dalle coulée=true, dalle humide=true}, effet={dalle humide=false}, cout=5]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=salle de bains}, cout=10]
+Mur Elevee[precondition={dalle coulée=true, dalle humide=false}, effet={murs élevés=true}, cout=7]
+Toiture Terminee[precondition={dalle coulée=true, murs élevés=true}, effet={toiture terminée=true}, cout=8]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre2}, cout=10]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=WC}, cout=10]
+Couller Dalle[precondition={}, effet={dalle coulée=true, dalle humide=true}, cout=2]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre1}, cout=10]
+
+Plan avec Djikstra...
+
+Couller Dalle[precondition={}, effet={dalle coulée=true, dalle humide=true}, cout=2]
+Attendre[precondition={dalle coulée=true, dalle humide=true}, effet={dalle humide=false}, cout=5]
+Mur Elevee[precondition={dalle coulée=true, dalle humide=false}, effet={murs élevés=true}, cout=7]
+Toiture Terminee[precondition={dalle coulée=true, murs élevés=true}, effet={toiture terminée=true}, cout=8]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=salle de bains}, cout=10]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre2}, cout=10]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=WC}, cout=10]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre1}, cout=10]
+
+Plan avec AStar...
+
+Couller Dalle[precondition={}, effet={dalle coulée=true, dalle humide=true}, cout=2]
+Attendre[precondition={dalle coulée=true, dalle humide=true}, effet={dalle humide=false}, cout=5]
+Mur Elevee[precondition={dalle coulée=true, dalle humide=false}, effet={murs élevés=true}, cout=7]
+Toiture Terminee[precondition={dalle coulée=true, murs élevés=true}, effet={toiture terminée=true}, cout=8]
+Positionner la pièce piece(2,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(2,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=salle de bains}, cout=10]
+Positionner la pièce piece(1,2)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre2}, cout=10]
+Positionner la pièce piece(1,1)[precondition={dalle coulée=true, dalle humide=false, Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null}, effet={Variable [name=piece(1,1), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=WC}, cout=10]
+Positionner la pièce piece(2,2)[precondition={dalle coulée=true, Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=null, dalle humide=false}, effet={Variable [name=piece(2,2), domaine=[cuisine, séjour, WC, salle de bains, chambre1, chambre2]]=chambre1}, cout=10]
+
+//_________________________________________________________________Extraction de connaissances_______________________________________________________________________//
+
+Création de la base de donnée...
+
+Propositionnalisation...
+
+Extraction de règles avec une fréquence 0.15 et une confiance de 0.5...
+
+Rule [permise=[piece(2,2)salle de bains]    => conclusion=[dalle humide], frequence=0.16071428, confiance=0.5806452]
+Rule [permise=[piece(2,1)WC]    => conclusion=[piece(1,1)séjour], frequence=0.15178572, confiance=0.6538462]
+Rule [permise=[murs élevés]    => conclusion=[toiture terminée], frequence=0.19642857, confiance=0.70967746]
+Rule [permise=[toiture terminée, murs élevés]    => conclusion=[dalle coulée], frequence=0.19642857, confiance=1.0]
+Rule [permise=[dalle coulée, toiture terminée]    => conclusion=[murs élevés], frequence=0.19642857, confiance=1.0]
+Rule [permise=[toiture terminée]    => conclusion=[dalle coulée], frequence=0.19642857, confiance=1.0]
+Rule [permise=[piece(1,2)cuisine]    => conclusion=[dalle humide], frequence=0.17857143, confiance=0.6666667]
+Rule [permise=[murs élevés]    => conclusion=[dalle coulée], frequence=0.2767857, confiance=1.0]
+Rule [permise=[piece(1,1)séjour]    => conclusion=[dalle humide], frequence=0.15178572, confiance=0.6296296]
+Rule [permise=[piece(1,1)séjour]    => conclusion=[piece(2,1)WC], frequence=0.15178572, confiance=0.6296296]
+Rule [permise=[piece(2,2)salle de bains]    => conclusion=[dalle coulée], frequence=0.15178572, confiance=0.5483871]
+Rule [permise=[toiture terminée]    => conclusion=[dalle coulée, murs élevés], frequence=0.19642857, confiance=1.0]
+Rule [permise=[murs élevés]    => conclusion=[dalle coulée, toiture terminée], frequence=0.19642857, confiance=0.70967746]
+Rule [permise=[dalle coulée, murs élevés]    => conclusion=[toiture terminée], frequence=0.19642857, confiance=0.70967746]
+Rule [permise=[toiture terminée]    => conclusion=[murs élevés], frequence=0.19642857, confiance=1.0]
+Rule [permise=[piece(2,1)WC]    => conclusion=[dalle humide], frequence=0.16964285, confiance=0.7307692]
+

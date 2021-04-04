@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="solvertests (3).jar:dataminingtests (2).jar:representationtests (2).jar:planningtests (2).jar" destdir="IA2/IA/doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="test" source="10" sourcepath="src" splitindex="true" use="true" version="true"/>
+    </target>
+</project>
